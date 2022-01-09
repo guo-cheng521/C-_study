@@ -1,0 +1,3 @@
+﻿  test.cpp
+D:\c_text\cha_3\test.cpp(72,21): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  cha_3.vcxproj -> D:\c_text\cha_3\Debug\cha_3.exe

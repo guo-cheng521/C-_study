@@ -1,0 +1,2 @@
+D:\c_text\cha_2\Debug\cha_2.exe
+D:\c_text\cha_2\Debug\cha_2.pdb
