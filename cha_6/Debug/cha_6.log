@@ -1,2 +1,3 @@
 ﻿  test.cpp
+D:\C++_study\cha_6\test.cpp(383,10): warning C4101: “rmb”: 未引用的局部变量
   cha_6.vcxproj -> D:\C++_study\cha_6\Debug\cha_6.exe
