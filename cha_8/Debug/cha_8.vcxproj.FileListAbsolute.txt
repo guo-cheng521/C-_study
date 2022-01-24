@@ -1,0 +1,2 @@
+D:\C++_study\cha_8\Debug\cha_8.exe
+D:\C++_study\cha_8\Debug\cha_8.pdb
