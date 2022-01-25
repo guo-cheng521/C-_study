@@ -201,72 +201,212 @@
 
 
 // twoswap.cpp -- specialization overrides a template
+//#include <iostream>
+//template <typename T>
+//void Swap(T& a, T& b);
+//
+//struct job
+//{
+//    char name[40];
+//    double salary;
+//    int floor;
+//};
+//
+//// explicit specialization 
+//template <> void Swap<job>(job& j1, job& j2);
+//void Show(job& j);
+//
+//int main()
+//{
+//    using namespace std;
+//    cout.precision(2);
+//    cout.setf(ios::fixed, ios::floatfield);
+//    int i = 10, j = 20;
+//    cout << "i, j = " << i << ", " << j << ".\n";
+//    cout << "Using compiler-generated int swapper:\n";
+//    Swap(i, j);    // generates void Swap(int &, int &)
+//    cout << "Now i, j = " << i << ", " << j << ".\n";
+//
+//    job sue = { "Susan Yaffee", 73000.60, 7 };
+//    job sidney = { "Sidney Taffee", 78060.72, 9 };
+//    cout << "Before job swapping:\n";
+//    Show(sue);
+//    Show(sidney);
+//    Swap(sue, sidney); // uses void Swap(job &, job &)
+//    cout << "After job swapping:\n";
+//    Show(sue);
+//    Show(sidney);
+//    // cin.get();
+//    return 0;
+//}
+//
+//template <typename T>
+//void Swap(T& a, T& b)    // general version
+//{
+//    T temp;
+//    temp = a;
+//    a = b;
+//    b = temp;
+//}
+//
+//// swaps just the salary and floor fields of a job structure
+//
+//template <> void Swap<job>(job& j1, job& j2)  // specialization
+//{
+//    double t1;
+//    int t2;
+//    t1 = j1.salary;
+//    j1.salary = j2.salary;
+//    j2.salary = t1;
+//    t2 = j1.floor;
+//    j1.floor = j2.floor;
+//    j2.floor = t2;
+//}
+//
+//void Show(job& j)
+//{
+//    using namespace std;
+//    cout << j.name << ": $" << j.salary
+//        << " on floor " << j.floor << endl;
+//}
+
+
+
+//#include <iostream>
+//using namespace std;
+//void show(const char*, int n = 0);
+//
+//int main()
+//{
+//	char str[20] = "hello, world";
+//	show(str, 3);
+//	show(str);
+//	show(str, 5);
+//	show(str);
+//	return 0;
+//}
+//void show(const char* str, int n)
+//{
+//	static int num = 0;
+//	num++;
+//	if (n == 0)
+//		cout << str << endl;
+//	else
+//	{
+//		for(int i = 0;i<num;i++)
+//			cout << str << endl;
+//	}
+//}
+
+
+//#include <iostream>
+//#include <cstring>
+//using namespace std;
+//struct CandyBar
+//{
+//	char name[20];
+//	float weight;
+//	int hot;
+//};
+//void set(CandyBar& x, const char na[20] = "Millennium Munch", float wei = 2.885, int ho = 350);
+//void show(const CandyBar& x);
+//int main()
+//{
+//	CandyBar bar;
+//	set(bar, "bang bang");
+//	show(bar);
+//	return 0;
+//}
+//void set(CandyBar& x, const  char na[20], float wei, int ho)
+//{
+//	strcpy(x.name, na);
+//	x.weight = wei;
+//	x.hot = ho;
+//}
+//void show(const CandyBar& x)
+//{
+//	cout << "name:" << x.name << endl;
+//	cout << "weight:" << x.weight << endl;
+//	cout << "hot:" << x.hot << endl;
+//}
+
+
+//#include <iostream>
+//#include <string>
+//#include <cctype>
+//using namespace std;
+//void tou(string& x);
+//int main()
+//{
+//	string str;
+//	cout << "Enter a string(q to quit):";
+//	getline(cin, str);
+//	while (str != "q")
+//	{
+//		tou(str);
+//		cout << str << endl;
+//		cout << "Enter a string(q to quit):";
+//		getline(cin, str);
+//	}
+//	cout << "Bye" << endl;
+//	return 0;
+//}
+//void tou(string& x)
+//{
+//	for (int i = 0; x[i] != '\0'; i++)
+//		x[i] = toupper(x[i]);
+//}
+
+
+//#include <iostream>
+//#include <cstring>
+//using namespace std;
+//
+//struct stringy
+//{
+//    char* str;
+//    int ct;
+//};
+//
+//void set(stringy& st, const char* x);
+//void show(stringy& st, const int n = 1);
+//void show(const char* x, const int n = 1);
+//
+//int main()
+//{
+//    stringy beany;
+//    char testing[] = "Reality isn't what it used to be.";
+//    set(beany, testing);
+//    show(beany);
+//    show(beany, 2);
+//    testing[0] = 'D';
+//    testing[1] = 'u';
+//    show(testing);
+//    show(testing, 3);
+//    show("Done!");
+//    system("pause");
+//    return 0;
+//}
+//void set(stringy& st, const char* x)
+//{
+//    int sz = strlen(x);
+//    st.str = new char[sz + 1];
+//    strcpy(st.str, x);
+//    st.ct = sz;
+//}
+//void show(stringy& st, const int n)
+//{
+//    for(int i = 0;i<n;i++)
+//        cout << st.str << endl;
+//}
+//void show(const char* x, const int n)
+//{
+//    for (int i = 0; i < n; i++)
+//        cout << x << endl;
+//}
+
+
 #include <iostream>
-template <typename T>
-void Swap(T& a, T& b);
+using namespace std;
 
-struct job
-{
-    char name[40];
-    double salary;
-    int floor;
-};
-
-// explicit specialization 
-template <> void Swap<job>(job& j1, job& j2);
-void Show(job& j);
-
-int main()
-{
-    using namespace std;
-    cout.precision(2);
-    cout.setf(ios::fixed, ios::floatfield);
-    int i = 10, j = 20;
-    cout << "i, j = " << i << ", " << j << ".\n";
-    cout << "Using compiler-generated int swapper:\n";
-    Swap(i, j);    // generates void Swap(int &, int &)
-    cout << "Now i, j = " << i << ", " << j << ".\n";
-
-    job sue = { "Susan Yaffee", 73000.60, 7 };
-    job sidney = { "Sidney Taffee", 78060.72, 9 };
-    cout << "Before job swapping:\n";
-    Show(sue);
-    Show(sidney);
-    Swap(sue, sidney); // uses void Swap(job &, job &)
-    cout << "After job swapping:\n";
-    Show(sue);
-    Show(sidney);
-    // cin.get();
-    return 0;
-}
-
-template <typename T>
-void Swap(T& a, T& b)    // general version
-{
-    T temp;
-    temp = a;
-    a = b;
-    b = temp;
-}
-
-// swaps just the salary and floor fields of a job structure
-
-template <> void Swap<job>(job& j1, job& j2)  // specialization
-{
-    double t1;
-    int t2;
-    t1 = j1.salary;
-    j1.salary = j2.salary;
-    j2.salary = t1;
-    t2 = j1.floor;
-    j1.floor = j2.floor;
-    j2.floor = t2;
-}
-
-void Show(job& j)
-{
-    using namespace std;
-    cout << j.name << ": $" << j.salary
-        << " on floor " << j.floor << endl;
-}
 
