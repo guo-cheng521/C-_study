@@ -406,7 +406,184 @@
 //}
 
 
+//#include <iostream>
+//using namespace std;
+//template<class T>
+//T f_max(const T arr[5]);
+//int main()
+//{
+//	int i_arr[5] = { 1,2,3,4,5 };
+//	double d_arr[5] = { 2.5,3.6,4.5,11.5,8.9 };
+//	cout << f_max(i_arr) << endl;
+//	cout << f_max(d_arr) << endl;
+//	return 0;
+//}
+//template<class T>
+//T f_max(const T arr[5])
+//{
+//	T temp = arr[0];
+//	for (int i = 0; i < 5; i++)
+//	{
+//		if (temp < arr[i])
+//			temp = arr[i];
+//	}
+//	return temp;
+//}
+
+
+//#include <iostream>
+//#include <cstring>
+//using namespace std;
+//template <typename T>
+//T maxn(T arr[],int n);
+//
+//template <> const char* maxn(const char* arr[],int n);
+//int main()
+//{
+//	int i_arr[6] = { 1,2,3,4,5,6 };
+//	double d_arr[4] = { 5.4,2.3,7.8,1.2 };
+//	const char* p_arr[5] = { "abs","edfsd","as","sda","ds" };
+//	cout << maxn(i_arr,6) << endl;
+//	cout << maxn(d_arr,4) << endl;
+//	cout << maxn(p_arr,5) << endl;
+//	return 0;
+//}
+//
+//template <typename T>
+//T maxn(T arr[],int n)
+//{
+//	T temp = arr[0];
+//	for (int i = 0; i < n; i++)
+//	{
+//		if (temp < arr[i])
+//			temp = arr[i];
+//	}
+//	return temp;
+//}
+//template<> const char* maxn(const char* arr[],int n)
+//{
+//	const char* p = arr[0];
+//	for (int i = 0; i < n; i++)
+//	{
+//		if (strlen(p) <strlen(arr[i]))
+//			p = arr[i];
+//	}
+//	return p;
+//}
+
+
+// 8.6.cpp: 定义控制台应用程序的入口点。
+//
+
+//#include <iostream>
+//#include <cstring>
+//using namespace std;
+//template <typename T>
+//T maxn(T arr[], int n);
+//
+//template <> char* maxn(char* arr[], int n);
+//
+//int main()
+//{
+//    int arr1[6] = { 1, 2, 3, 4, 5, 6 };
+//    double arr2[4] = { 1.5, 8.66, 7.773, 0.4 };
+//    int max1;
+//    double max2;
+//    max1 = maxn(arr1, 6);
+//    max2 = maxn(arr2, 4);
+//    char* arr3[5] = { "one", "two", "three", "four", "five" };
+//    char* max3;
+//    max3 = maxn(arr3, 5);
+//    cout << "The biggest number of the first array is " << max1 << endl;
+//    cout << "The biggest number of the second array is " << max2 << endl;
+//    cout << "The longest address of the third array is " << &max3 << endl;
+//    cout << "Bye." << endl;
+//    return 0;
+//}
+//
+//template <typename T>
+//T maxn(T arr[], int n)
+//{
+//    T max = 0;
+//    for (int i = 0; i < n; i++)
+//    {
+//        max = max > arr[i] ? max : arr[i];
+//    }
+//    return max;
+//}
+//
+//template <> char* maxn(char* arr[], int n)
+//{
+//    int j = 0;
+//    int max = 0;
+//    for (int i = 0; i < n; i++)
+//    {
+//        if (max < strlen(arr[i]))
+//        {
+//            max = strlen(arr[i]);
+//            j = i;
+//        }
+//    }
+//    char* address = arr[j];
+//    return address;
+//}
+
+
+// 8.7.cpp: 定义控制台应用程序的入口点。
+//
+
 #include <iostream>
-using namespace std;
 
+template <typename T>
+T SumArray(T arr[], int n);
 
+template <typename T>
+T SumArray(T* arr[], int n);
+
+struct debts
+{
+    char name[50];
+    double amount;
+};
+
+int main()
+{
+    using namespace std;
+    int things[6] = { 13, 31, 103, 301, 310, 130 };
+    struct debts mr_E[3] =
+    {
+        {"Ima Wolfe", 2400.0},
+        {"Ura Foxe", 1300.0},
+        {"Iby Stout", 1800.0}
+    };
+    double* pd[3];
+    for (int i = 0; i < 3; i++)
+        pd[i] = &mr_E[i].amount;
+    int sum1 = SumArray(things, 6);
+    cout << "The sum of things is " << sum1 << endl;
+    double sum2 = SumArray(pd, 3);
+    cout << "The sum of the debts is " << sum2 << endl;
+    return 0;
+}
+
+template <typename T>
+T SumArray(T arr[], int n)
+{
+    using namespace std;
+    cout << "Template A\n";
+    T sum = 0;
+    for (int i = 0; i < n; i++)
+        sum += arr[i];
+    return sum;
+}
+
+template <typename T>
+T SumArray(T* arr[], int n)
+{
+    using namespace std;
+    cout << "Template B\n";
+    T sum = 0;
+    for (int i = 0; i < n; i++)
+        sum += *arr[i];
+    return sum;
+}
