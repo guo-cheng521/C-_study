@@ -136,39 +136,150 @@
 //}
 
 
+//#include <iostream>
+//using namespace std;
+//void other();
+//namespace n1
+//{
+//	int x = 1;
+//}
+//namespace n2
+//{
+//	int x = 2;
+//}
+//int main()
+//{
+//	using namespace n1;
+//	cout << x << endl;
+//	{
+//		int x = 4;
+//		cout << x << "," << n1::x << "," << n2::x << endl;
+//
+//	}
+//	using n2::x;
+//	cout << x << endl;
+//	other();
+//	return 0;
+//}
+//void other()
+//{
+//	using namespace n2;
+//	cout << x << endl;
+//	{
+//		int x = 4;
+//		cout << x << "," << n1::x << "," << n2::x << endl;
+//	}
+//	using n2::x;
+//	cout << x << endl;
+//}
+
+
+//#include <iostream>
+//#include "golf.h"
+//using namespace std;
+//
+//int main()
+//{
+//	golf use[5];
+//	const char* name1 = "Li Ming";
+//	int hc1 = 1;
+//	setgolf(use[0], name1, hc1);
+//	int i = 1;
+//	for (i; i < 5; i++)
+//	{
+//		int ret = setgolf(use[i]);
+//		if (ret == 0)
+//			break;
+//	}
+//	for (int j = 0; j < i; j++)
+//		showgolf(use[j]);
+//	return 0;
+//}
+
+//#include <iostream>
+//#include <string>
+//using namespace std;
+//const int ArSize = 10;
+//
+//void strcount(const string str);
+//int main()
+//{
+//	string input;
+//	char next;
+//	cout << "Enter a line:\n";
+//	getline(cin, input);
+//	while (input != "")
+//	{
+//		strcount(input);
+//		cout << "Enternext line(empty line to quit):\n";
+//		getline(cin, input);
+//	}
+//	cout << "bye\n";
+//	return 0;
+//}
+//void strcount(const string str)
+//{
+//	static int total = 0;
+//	int count = 0;
+//	cout << "\"" << str << "\"contains";
+//	for (count; str[count]; count++);
+//	total += count;
+//	cout << count << " characters\n";
+//	cout << total << " characters total\n";
+//}
+
+
+
+//#include <iostream>
+//#include <cstring>
+//#include <new>
+//using namespace std;
+//
+//struct chaff
+//{
+//	char dross[20];
+//	int slag;
+//};
+//
+//int main()
+//{
+//	//char buffer[10];
+//	//chaff* p = new (buffer) chaff[2];
+//	char* ps = new char[100];		//»º´æÇøÒª×ã¹»´ó
+//	chaff* pps = new (ps) chaff[2];
+//	strcpy(pps->dross, "Li ming");
+//	pps->slag = 20;
+//	strcpy((pps + 1)->dross, "wang ming");
+//	(pps + 1)->slag = 30;
+//	for (int i = 0; i < 2; i++)
+//	{
+//		cout << (pps + i)->dross << "    " << (pps + i)->slag << endl;
+//	}
+//	delete[] ps;
+//	return 0;
+//}
+
+
+// sales.cpp -- chack the functions
+
+#include "namesp.h"
 #include <iostream>
+
 using namespace std;
-void other();
-namespace n1
-{
-	int x = 1;
-}
-namespace n2
-{
-	int x = 2;
-}
+using namespace SALES;
 int main()
 {
-	using namespace n1;
-	cout << x << endl;
-	{
-		int x = 4;
-		cout << x << "," << n1::x << "," << n2::x << endl;
-
-	}
-	using n2::x;
-	cout << x << endl;
-	other();
-	return 0;
-}
-void other()
-{
-	using namespace n2;
-	cout << x << endl;
-	{
-		int x = 4;
-		cout << x << "," << n1::x << "," << n2::x << endl;
-	}
-	using n2::x;
-	cout << x << endl;
+    Sales s1;
+    Sales s2;
+    cout << "The following is the first sales' information:\n";
+    setSales(s1);
+    showSales(s1);
+    cout << endl << endl << endl;
+    cout << "The following is the second sales' information:\n";
+    double ar[3] = { 12.5, 55.2, 60.7 };
+    setSales(s2, ar, 3);
+    showSales(s2);
+    cout << endl << endl << endl;
+    cout << "Bye\n";
+    return 0;
 }
