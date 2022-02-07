@@ -15,16 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stock10.h">
+    <ClCompile Include="test.cpp">
       <Filter>源文件</Filter>
-    </ClInclude>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stock10.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="usestok1.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
+    <ClInclude Include="stack.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
