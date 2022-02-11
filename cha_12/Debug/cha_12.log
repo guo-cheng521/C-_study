@@ -1,0 +1,5 @@
+﻿  bank.cpp
+D:\C++_study\cha_12\bank.cpp(18,25): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+  queue.cpp
+  正在生成代码...
+  cha_12.vcxproj -> D:\C++_study\cha_12\Debug\cha_12.exe

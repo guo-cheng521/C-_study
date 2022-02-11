@@ -21,5 +21,6 @@ public:
 	bool isfull() const;
 	bool push(const Item& item);
 	bool pop(Item& item);
+	double mtotal() const { return total; }
 };
 #endif // !STACK_H_
